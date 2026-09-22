@@ -1,13 +1,13 @@
 ---
-name: fmode-image
+name: skill-image
 description: "触发词:生成架构图/场景图/插图/产品设计图/爆炸图。走API出白底PNG，自动读Key，¥0.3-0.5/张。"
-version: 0.2.0
+version: 0.2.1
 author: Fmode
 license: MIT
 platforms: [linux, macos, windows]
 ---
 
-# fmode-image v0.2 — AI图像生成器
+# skill-image v0.2.1 — AI图像生成器
 
 7种模式 · 零依赖纯ESM · 自动读API Key · 白底PNG直接放PPT
 
@@ -25,28 +25,28 @@ platforms: [linux, macos, windows]
 
 ## 安装
 ```bash
-npm install -g fmode-image
+npm install -g skill-image
 ```
 
 ## 快速使用
 ```bash
 # 应用界面（推荐！）
-npx fmode-image --app "标题'内容合规系统'左侧导航5项，顶部指标卡3张" app-demo
+npx skill-image --app "标题'内容合规系统'左侧导航5项，顶部指标卡3张" app-demo
 
 # 架构图
-npx fmode-image --arch "Harness五层引擎，从上到下数据流" harness
+npx skill-image --arch "Harness五层引擎，从上到下数据流" harness
 
 # 产品设计图（硬件/工业产品）
-npx fmode-image --product "一款智能水杯的三视图+爆炸图组合，白底，科技感渲染" cup-design
+npx skill-image --product "一款智能水杯的三视图+爆炸图组合，白底，科技感渲染" cup-design
 
 # 产品爆炸图（零件分解）
-npx fmode-image --explode "智能手表爆炸图：表盘/表圈/电池/主板/表带分层分解" watch-explode
+npx skill-image --explode "智能手表爆炸图：表盘/表圈/电池/主板/表带分层分解" watch-explode
 
 # 场景插图（省40%成本）
-npx fmode-image --scene "法务团队深夜加班堆满稿件" scene
+npx skill-image --scene "法务团队深夜加班堆满稿件" scene
 
 # 整页PPT
-npx fmode-image --slide "封面：内容营销的超级预审Agent" cover
+npx skill-image --slide "封面：内容营销的超级预审Agent" cover
 ```
 
 ## 输出控制
@@ -87,7 +87,7 @@ npx fmode-image --slide "封面：内容营销的超级预审Agent" cover
 
 ## 独立调用（ESM import）
 ```js
-import { gen, genArch, genApp, genExplode, genProduct, genScene, genSlide, batch } from "fmode-image";
+import { gen, genArch, genApp, genExplode, genProduct, genScene, genSlide, batch } from "skill-image";
 await genProduct("智能水杯多角度+爆炸图组合，白底", "cup");
 await genExplode("手表爆炸分层分解，标注数据流", "watch-explode");
 ```
@@ -95,7 +95,8 @@ await genExplode("手表爆炸分层分解，标注数据流", "watch-explode");
 ## 版本历史
 - **v0.1.0**：首发 ESM 化（6种通用模式：app/arch/explode/scene/detail/slide）
 - **v0.2.0**：新增 `--product` 产品设计模式 + 产品设计/爆炸图最佳实践
+- **v0.2.1**：更名 `fmode-image` → `skill-image`，bin 增加 install/workspace/check/smoke 安装子命令
 
 ## 链接
-- GitHub：https://github.com/fmodecn/fmode-image
-- npm：https://www.npmjs.com/package/fmode-image
+- GitHub：https://github.com/fmodecn/skill-image
+- npm：https://www.npmjs.com/package/skill-image

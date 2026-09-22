@@ -1,14 +1,17 @@
 {
-  "name": "fmode-image",
-  "version": "2.0.0",
-  "type": "native",
-  "entry": "./skills/fmode-image/SKILL.md",
-  "requires": ["node>=18"],
-  "description": "AI架构图和场景插图生成器。6种模式，零依赖纯ESM，自动读API Key。",
-  "commands": {
-    "fmode-image": {
-      "description": "生成AI图像",
-      "args": "<mode> <prompt> [name]"
-    }
-  }
+  "name": "skill-image",
+  "version": "0.2.1",
+  "description": "Claude Code 独立技能包：AI 架构图、应用界面、产品设计图、爆炸图、场景插图与整页 PPT 配图生成器。7 种模式，零依赖纯 ESM，自动读取 Fmode API Key，输出纯白底 PNG 可直接拖入 PPT。",
+  "plugin": "skill-image",
+  "skills": [
+    "skill-image"
+  ],
+  "entrySkill": "skill-image",
+  "npmPackage": "skill-image",
+  "smokeCommand": "npm run smoke",
+  "installCommand": "npx skill-image@latest install",
+  "workspaceInstallCommand": "npx skill-image@latest workspace",
+  "workspaceSkillPath": ".claude/skills/skill-image/SKILL.md",
+  "globalSkillPath": "%USERPROFILE%/.claude/skills/skill-image/SKILL.md",
+  "installHint": "工作区安装：npx skill-image@latest workspace，会写入 ./.claude/skills/skill-image/。用户级安装：npx skill-image@latest install，会写入 ~/.claude/skills/skill-image/。生成图像直接调用：npx skill-image --arch \"提示词\" 文件名。API Key 读取顺序：FMODE_API_KEY 环境变量 > ~/.fmode/config.json 的 api_key / fmodeApiToken > 项目 .env。输出目录用 SKILL_IMAGE_OUTPUT 覆盖（默认当前目录）。"
 }

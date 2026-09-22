@@ -1,18 +1,23 @@
 {
-  "name": "fmode-image",
-  "version": "0.2.0",
-  "description": "AI图像生成器。7种模式(--app/--arch/--explode/--product/--scene/--slide)，零依赖纯ESM，自动读API Key。",
-  "main": "./lib/fmode-image.mjs",
+  "name": "skill-image",
+  "version": "0.2.1",
+  "description": "Claude Code skill + CLI: AI 图像生成器。7 种模式（--app/--arch/--explode/--product/--scene/--detail/--slide），零依赖纯 ESM，自动读 API Key，白底 PNG 可直接拖入 PPT。",
+  "type": "commonjs",
+  "main": "./lib/skill-image.mjs",
   "exports": {
     ".": {
-      "import": "./lib/fmode-image.mjs",
-      "default": "./lib/fmode-image.mjs"
+      "import": "./lib/skill-image.mjs",
+      "default": "./lib/skill-image.mjs"
     }
   },
   "bin": {
-    "fmode-image": "./bin/fmode-image.js"
+    "skill-image": "./bin/skill-image.js"
+  },
+  "scripts": {
+    "smoke": "node scripts/smoke.js"
   },
   "files": [
+    ".claude-plugin/",
     "lib/",
     "bin/",
     "skills/",
@@ -22,6 +27,8 @@
     "skill-package-manifest.json"
   ],
   "keywords": [
+    "claude-code",
+    "claude-skill",
     "fmode",
     "image",
     "ai",
@@ -36,12 +43,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fmodecn/fmode-image.git"
+    "url": "git+https://github.com/fmodecn/skill-image.git"
   },
   "bugs": {
-    "url": "https://github.com/fmodecn/fmode-image/issues"
+    "url": "https://github.com/fmodecn/skill-image/issues"
   },
-  "homepage": "https://github.com/fmodecn/fmode-image#readme",
+  "homepage": "https://github.com/fmodecn/skill-image#readme",
   "engines": {
     "node": ">=18"
   }
