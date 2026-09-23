@@ -3,9 +3,9 @@ name: skill-image
 description: "触发词:生成架构图/场景图/插图/产品设计图/爆炸图。走API出白底PNG，自动读Key，¥0.3-0.5/张。"
 version: 1.1.0
 author: Yuyang001 (FmodeAgent)
-license: MIT
+license: MPL-2.0
 copyright: "Copyright (c) 2026 未来飞马 Fmode"
-tags: [未来飞马, 智能体技能, 超级技能, 服务级, 图像视觉, FmodeAgent, FmodeCode, image, image-generation, architecture-diagram, product, scene, slide]
+tags: [未来飞马, 智能体技能, 超级技能, 服务级, 图像视觉, FmodeAgent, Hermes Agent, FmodeCode, Claude Code, image, image-generation, architecture-diagram, product, scene, slide]
 platforms: [linux, macos, windows]
 ---
 

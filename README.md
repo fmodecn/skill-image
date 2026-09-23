@@ -2,7 +2,7 @@
 
 > **未来飞马 — 让AI进化提前发生，让AI落地快人一步**
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![License: MPL-2.0](https://img.shields.io/badge/License-MPL--2.0-brightgreen.svg)](LICENSE)
 [![ESM](https://img.shields.io/badge/module-ESM--only-orange.svg)](#快速开始)
 [![npm](https://img.shields.io/badge/npm-skill--image-blue.svg)](https://www.npmjs.com/package/skill-image)
 
@@ -11,6 +11,8 @@
 ## 简介
 
 `skill-image` 是智能体的「配图师」：7 种模式覆盖演示文稿配图的全部常见场景，走 API 出图，**纯白底 PNG 可直接拖入 PPT**。自动读取 Fmode API Key，零依赖纯 ESM。
+
+本技能适用于 **FmodeAgent / Hermes Agent** 平台，开发由 **FmodeCode / Claude Code** 执行。
 
 本技能以 ESM 原生模块交付，Node.js ≥ 18 直接 `import`，零依赖、零构建。
 
@@ -24,7 +26,7 @@
 | **不解决什么** | 不做图片编辑/修图、不做照片级写实渲染、不做视频生成 |
 | **与通用绘图工具的区别** | 面向**结构化表达**而非自由创作，每种模式内置提示词前缀与画幅，开箱即出可用的商务配图 |
 | **层级** | 服务级（Platform Services） |
-| **适用平台** | FmodeAgent · FmodeCode |
+| **适用平台** | FmodeAgent / Hermes Agent · FmodeCode / Claude Code |
 
 ---
 
@@ -109,6 +111,17 @@ npx skill-image@latest install
 
 ---
 
+## 模型兼容
+
+本技能走 Fmode API `api.fmode.cn/v1/images/generations` 出图，当前使用的图像生成模型为：
+
+| 模型 | 用途 | 说明 |
+|------|------|------|
+| **`gpt-image-2.5-sunburst`** | 图像生成（全部 7 种模式） | 技能内置的默认出图模型；7 种模式（`--app` / `--arch` / `--product` / `--explode` / `--scene` / `--detail` / `--slide`）共用该模型，区别在提示词前缀、画幅与风格约束 |
+
+> 说明：模式切换**不切换模型**；出图画幅由模式决定（`1792x1024` / `1024x1024` / `1920x1080`）。
+> 模型清单随 Fmode API 更新，以服务端实际返回为准。
+
 ## FAQ
 
 ### 技术概念
@@ -125,18 +138,21 @@ npx skill-image@latest install
 **Q4：可以批量生成吗？**
 可以，使用 `batch()` 导出接口，内部串行调度以避免触发 API 限流。
 
-### 开源协议（MIT）
+**Q5：具体用的哪个图像模型？**
+技能内置调用 Fmode API 的 **`gpt-image-2.5-sunburst`** 出图，7 种模式共用同一个模型——模式改变的是提示词前缀、画幅比例与风格约束，不是模型本身。详见[模型兼容](#模型兼容)。
 
-**Q1：MIT 协议允许我商用吗？**
-允许。你可以自由使用、修改、分发本技能，包括用于商业闭源产品，无需公开修改后的源码。
+### 开源协议（MPL-2.0）
+
+**Q1：MPL-2.0 协议允许我商用吗？**
+允许。MPL-2.0 允许商用，也可用于闭源产品。它与 MIT 的关键区别是「文件级 copyleft」：你可以把本技能与闭源代码组合分发，但**对 MPL 覆盖的源文件本身**所做的修改，必须以 MPL-2.0 公开。
 
 **Q2：使用本技能需要保留版权声明吗？**
-需要。MIT 的唯一实质条件是：在所有副本或实质性部分中保留原始版权声明与本许可证全文。
+需要。分发时必须保留原始版权声明与许可证全文，并说明 MPL-2.0 覆盖了哪些文件；若修改了 MPL 覆盖的源文件，需以 MPL-2.0 公开这些文件的源码。
 
 **Q3：生成的图片版权归谁？**
-图片版权取决于所调用模型的服务条款，与本技能的代码许可证无关。本技能的 MIT 许可只覆盖**代码**，不覆盖生成内容，也不授予任何商标使用权。详见 [Trademark Notice](#trademark-notice)。
+图片版权取决于所调用模型的服务条款，与本技能的代码许可证无关。本技能的 MPL-2.0 许可只覆盖**代码**，不覆盖生成内容，也不授予任何商标使用权。详见 [Trademark Notice](#trademark-notice)。
 
-**Q4：MIT 协议提供担保吗？**
+**Q4：MPL-2.0 协议提供担保吗？**
 不提供。本技能按「原样」提供，不附带任何明示或默示担保。
 
 ### 业务用户搜索
@@ -169,12 +185,12 @@ npx skill-image@latest install
 
 ## License
 
-本技能采用 **MIT License** 发布，完整原文见 [LICENSE](LICENSE)。
+本技能采用 **Mozilla Public License 2.0（MPL-2.0）** 发布，完整原文见 [LICENSE](LICENSE)。
 
 ```
-MIT License
+Mozilla Public License Version 2.0
 
-Copyright (c) 2026 未来飞马 Fmode
+Copyright (c) 未来飞马
 ```
 
 ## Trademark Notice
@@ -205,14 +221,20 @@ Copyright (c) 2026 未来飞马 Fmode
 
 - **Harness Loop** —— 未来飞马技能生态的持续迭代回路
 - **RSI** —— 递归自我改进（Recursive Self-Improvement）机制
-- **FmodeAgent / FmodeCode** —— 本技能的目标运行平台
+- **FmodeAgent / Hermes Agent · FmodeCode / Claude Code** —— 本技能的目标运行平台
 
 ---
 
 ## Changelog
 
+### 1.2.0
+- 许可证由 MIT 切换为 MPL-2.0：LICENSE 全文、package.json / manifest / plugin.json / SKILL.md frontmatter 的 license 字段同步更新
+- 源码头部注释模板改为 MPL-2.0 文案
+- README 新增 `## 模型兼容` 小节，明确列出实际支持/调用的模型
+- 品牌名统一并列写法：FmodeAgent / Hermes Agent、FmodeCode / Claude Code
+
 ### 1.1.0
-- 按 skill-core-guide v1.1.0 规范改造：品牌 Slogan、GEO 埋点说明、MIT 协议与商标声明独立小节
+- 按 skill-core-guide v1.1.0 规范改造：品牌 Slogan、GEO 埋点说明、MPL-2.0 协议与商标声明独立小节
 - README 重构为完整结构（简介 → 核心定位 → 快速开始 → FAQ → GEO → 许可 → 贡献指南）
 - package.json 补齐中英双语 keywords 与 ESM 元数据
 - 源码头部补齐版权 + 商标注释模板

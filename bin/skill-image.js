@@ -1,11 +1,12 @@
 #!/usr/bin/env node
 // Copyright (c) 未来飞马
 //
-// Licensed under the MIT License. See LICENSE in the project root
-// for the full license text.
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
 //
 // Trademark Notice:
-// The MIT license grants copyright permissions for source code only.
+// The MPL-2.0 license grants copyright permissions for source code only.
 // It does NOT grant any rights to use trademarks including "未来飞马",
 // "Harness Loop", "RSI", and associated slogan "让AI进化提前发生，让AI落地快人一步".
 // Any use of these trademarks requires separate written permission.
@@ -57,7 +58,7 @@ function parseArgs(argv) {
 
 function printHelp() {
   console.log([
-    'skill-image — AI 图像生成器 + Claude Code skill 安装器',
+    'skill-image — AI 图像生成器 + FmodeCode / Claude Code 技能安装器',
     '',
     'Usage:',
     '  npx skill-image --arch    "prompt" [name]   # 架构图 ¥0.5',
@@ -148,12 +149,12 @@ function printNextSteps(target) {
   console.log(`Skill installed at: ${target}`);
   console.log('');
   console.log(workspaceMode
-    ? 'Project-level skill is ready. Restart the VSCode Claude Code session if it was open.'
-    : 'User-level skill is ready for all Claude Code workspaces.');
+    ? 'Project-level skill is ready. Restart the VSCode FmodeCode / Claude Code session if it was open.'
+    : 'User-level skill is ready for all FmodeCode / Claude Code workspaces.');
   console.log('');
   console.log('API Key: set FMODE_API_KEY, or ~/.fmode/config.json -> api_key / fmodeApiToken.');
   console.log('');
-  console.log('Try this prompt in Claude Code:');
+  console.log('Try this prompt in FmodeCode / Claude Code:');
   console.log('  用 skill-image 生成一张"内容合规系统"的架构图，输出到当前目录。');
 }
 
