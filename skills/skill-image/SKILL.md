@@ -1,13 +1,15 @@
 ---
 name: skill-image
 description: "触发词:生成架构图/场景图/插图/产品设计图/爆炸图。走API出白底PNG，自动读Key，¥0.3-0.5/张。"
-version: 0.2.1
-author: Fmode
+version: 1.1.0
+author: Yuyang001 (FmodeAgent)
 license: MIT
+copyright: "Copyright (c) 2026 未来飞马 Fmode"
+tags: [未来飞马, 智能体技能, 超级技能, 服务级, 图像视觉, FmodeAgent, FmodeCode, image, image-generation, architecture-diagram, product, scene, slide]
 platforms: [linux, macos, windows]
 ---
 
-# skill-image v0.2.1 — AI图像生成器
+# skill-image v1.1.0 — AI图像生成器
 
 7种模式 · 零依赖纯ESM · 自动读API Key · 白底PNG直接放PPT
 
@@ -95,7 +97,7 @@ await genExplode("手表爆炸分层分解，标注数据流", "watch-explode");
 ## 版本历史
 - **v0.1.0**：首发 ESM 化（6种通用模式：app/arch/explode/scene/detail/slide）
 - **v0.2.0**：新增 `--product` 产品设计模式 + 产品设计/爆炸图最佳实践
-- **v0.2.1**：更名 `fmode-image` → `skill-image`，bin 增加 install/workspace/check/smoke 安装子命令
+- **v0.2.1**：更名至 `skill-image`，bin 增加 install/workspace/check/smoke 安装子命令
 
 ## 链接
 - GitHub：https://github.com/fmodecn/skill-image

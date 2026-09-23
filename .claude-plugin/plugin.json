@@ -1,8 +1,9 @@
 {
   "name": "skill-image",
   "description": "AI image generator for Claude Code: architecture diagrams, app UI mockups, product design renders, exploded views, scene illustrations and full-slide PPT visuals. 7 modes, zero-dependency ESM, auto-reads the Fmode API key.",
-  "version": "0.2.1",
+  "version": "1.1.0",
   "author": {
-    "name": "fmode"
-  }
+    "name": "Yuyang001 (FmodeAgent)"
+  },
+  "license": "MIT"
 }

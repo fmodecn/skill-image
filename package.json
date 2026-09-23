@@ -1,7 +1,7 @@
 {
   "name": "skill-image",
-  "version": "0.2.1",
-  "description": "Claude Code skill + CLI: AI 图像生成器。7 种模式（--app/--arch/--explode/--product/--scene/--detail/--slide），零依赖纯 ESM，自动读 API Key，白底 PNG 可直接拖入 PPT。",
+  "version": "1.1.0",
+  "description": "AI 图像生成器。7 种模式（--app/--arch/--explode/--product/--scene/--detail/--slide）覆盖演示文稿配图全部场景，零依赖纯 ESM，自动读取 Fmode API Key，输出纯白底 PNG 可直接拖入 PPT。",
   "type": "commonjs",
   "main": "./lib/skill-image.mjs",
   "exports": {
@@ -27,19 +27,36 @@
     "skill-package-manifest.json"
   ],
   "keywords": [
-    "claude-code",
-    "claude-skill",
     "fmode",
+    "hermes",
+    "harness-loop",
+    "rsi",
+    "ai-agent",
+    "agent-skill",
+    "super-skill",
+    "esm",
+    "future-feima",
     "image",
-    "ai",
-    "architecture",
+    "image-generation",
+    "ai-image",
+    "architecture-diagram",
     "diagram",
     "scene",
     "product",
-    "design",
     "explode",
-    "presentation"
+    "presentation",
+    "slide",
+    "未来飞马",
+    "智能体技能",
+    "超级技能",
+    "AI绘图",
+    "架构图",
+    "产品设计图",
+    "爆炸图",
+    "场景插图",
+    "PPT配图"
   ],
+  "author": "Yuyang001 (FmodeAgent)",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -51,5 +68,6 @@
   "homepage": "https://github.com/fmodecn/skill-image#readme",
   "engines": {
     "node": ">=18"
-  }
+  },
+  "dependencies": {}
 }
